@@ -1,7 +1,6 @@
 /*
    Copyright (c) 2016, The Linux Foundation. All rights reserved.
    Copyright (c) 2017-2018, The LineageOS Project. All rights reserved.
-
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -14,7 +13,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -34,6 +32,7 @@
 
 #include <android-base/logging.h>
 #include <android-base/properties.h>
+
 #include "property_service.h"
 #include "vendor_init.h"
 
@@ -72,71 +71,71 @@ void init_target_properties()
     std::string bootloader = GetProperty("ro.bootloader", "");
 
     if (bootloader.find("N915FY") == 0) {
-        /* tbltexx These values are taken from tbltexx and edited for the 915FY FIXME */
-        property_override("ro.build.fingerprint", "samsung/tbltebtu/tblte:6.0.1/MMB29M/N915FYXXS1DQH2:user/release-keys");
+        /* tbltexx */
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/tbltebtu/tblte:6.0.1/MMB29M/N915FYXXS1DQH2:user/release-keys");
         property_override("ro.build.description", "tbltebtu-user 6.0.1 MMB29M N915FYXXS1DQH2 release-keys");
-        property_override("ro.product.name", "tbltexx");
-        property_override("ro.product.model", "SM-N915FY");
-        property_override("ro.product.device", "tblte");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N915FY");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "tblte");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "tbltexx");
         gsm_properties();
     } else if (bootloader.find("N915G") == 0) {
         /* tbltedt */
-        property_override("ro.build.fingerprint", "samsung/tbltedt/tblte:6.0.1/MMB29M/N915GDTS1DQE1:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/tbltedt/tblte:6.0.1/MMB29M/N915GDTS1DQE1:user/release-keys");
         property_override("ro.build.description", "tbltedt-user 6.0.1 MMB29M N915GDTS1DQE1 release-keys");
-        property_override("ro.product.model", "SM-N915G");
-        property_override("ro.product.device", "tblte");
-        property_override("ro.product.name", "tbltedt");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N915G");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "tblte");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "tbltedt");
         gsm_properties();
     } else if (bootloader.find("N915R4") == 0) {
         /* tblteusc */
-        property_override("ro.build.fingerprint", "samsung/tblteusc/tblte:6.0.1/MMB29M/N915R4TYS1CQC1:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/tblteusc/tblte:6.0.1/MMB29M/N915R4TYS1CQC1:user/release-keys");
         property_override("ro.build.description", "tblteusc-user 6.0.1 MMB29M N915R4TYS1CQC1 release-keys");
-        property_override("ro.product.model", "SM-N915R4");
-        property_override("ro.product.device", "tblteusc");
-        property_override("ro.product.name", "tblteusc");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N915R4");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "tblteusc");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "tblteusc");
         cdma_properties("U.S. Cellular", "311580", "0");
     } else if (bootloader.find("N915P") == 0) {
         /* tbltespr */
-        property_override("ro.build.fingerprint", "samsung/tbltespr/tblte:6.0.1/MMB29M/N915PVPS4DQC1:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/tbltespr/tblte:6.0.1/MMB29M/N915PVPS4DQC1:user/release-keys");
         property_override("ro.build.description", "tbltespr-user 6.0.1 MMB29M N915PVPS4DQC1 release-keys");
-        property_override("ro.product.model", "SM-N915P");
-        property_override("ro.product.device", "tbltespr");
-        property_override("ro.product.name", "tbltespr");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N915P");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "tbltespr");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "tbltespr");
         cdma_properties("Sprint", "310120", "1");
     } else if (bootloader.find("N915T") == 0) {
         /* tbltetmo */
-        property_override("ro.build.fingerprint", "samsung/tbltetmo/tblte:6.0.1/MMB29M/N915TUVS2EQE2:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/tbltetmo/tblte:6.0.1/MMB29M/N915TUVS2EQE2:user/release-keys");
         property_override("ro.build.description", "tbltetmo-user 6.0.1 MMB29M N915TUVS2EQE2 release-keys");
-        property_override("ro.product.model", "SM-N915T");
-        property_override("ro.product.device", "tbltetmo");
-        property_override("ro.product.name", "tbltetmo");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N915T");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "tbltetmo");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "tbltetmo");
         gsm_properties();
     } else if (bootloader.find("N915V") == 0) {
         /* tbltevzw */
-        property_override("ro.build.fingerprint", "samsung/tbltevzw/tblte:6.0.1/MMB29M/N915VVRS2CQE1:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Verizon/tbltevzw/tblte:6.0.1/MMB29M/N915VVRS2CQE1:user/release-keys");
         property_override("ro.build.description", "tbltevzw-user 6.0.1 MMB29M N915VVRS2CQE1 release-keys");
-        property_override("ro.product.model", "SM-N915V");
-        property_override("ro.product.device", "tbltevzw");
-        property_override("ro.product.name", "tbltevzw");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N915V");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "tbltevzw");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "tbltevzw");
         cdma_properties("Verizon", "311480", "0");
     } else if (bootloader.find("N915W8") == 0) {
         /* tbltecan */
-        property_override("ro.build.fingerprint", "samsung/tbltecan/tblte:6.0.1/MMB29M/N915W8VLS1DQD1:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/tbltecan/tblte:6.0.1/MMB29M/N915W8VLS1DQD1:user/release-keys");
         property_override("ro.build.description", "tbltecan-user 6.0.1 MMB29M N915W8VLS1DQD1 release-keys");
-        property_override("ro.product.model", "SM-N915W8");
-        property_override("ro.product.device", "tbltecan");
-        property_override("ro.product.name", "tbltecan");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N915W8");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "tbltecan");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "tbltecan");
         gsm_properties();
     } else {
         /* tblte */
-        property_override("ro.build.fingerprint", "samsung/tbltebtu/tblte:6.0.1/MMB29M/N915FYXXS1DQH2:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/tbltebtu/tblte:6.0.1/MMB29M/N915FYXXS1DQH2:user/release-keys");
         property_override("ro.build.description", "tbltebtu-user 6.0.1 MMB29M N915FYXXS1DQH2 release-keys");
-        property_override("ro.product.model", "SM-N915F");
-        property_override("ro.product.device", "tblte");
-        property_override("ro.product.name", "tblte");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N915F");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "tblte");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "tblte");
         gsm_properties();
     }
 
     std::string device = GetProperty("ro.product.device", "");
-    LOG(ERROR) << "Found bootloader id " << bootloader <<  " setting build properties for " << device <<  " device" << std::endl;
+    LOG(ERROR) << "Found bootloader id " << bootloader << " setting build properties for " << device << " device" << std::endl;
 }
