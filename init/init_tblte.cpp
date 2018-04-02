@@ -44,8 +44,8 @@ using android::init::property_set;
 
 void gsm_properties()
 {
-    property_override("telephony.lteOnGsmDevice", "1");
-    property_override("ro.telephony.default_network", "9");
+    property_set("telephony.lteOnGsmDevice", "1");
+    property_set("ro.telephony.default_network", "9");
 }
 
 void cdma_properties(char const *operator_alpha,
