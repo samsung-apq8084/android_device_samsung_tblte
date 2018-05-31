@@ -128,8 +128,8 @@ void init_target_properties()
         gsm_properties();
     } else {
         /* tblte */
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/tbltebtu/tblte:6.0.1/MMB29M/N915FYXXS1DQH2:user/release-keys");
-        property_override("ro.build.description", "tbltebtu-user 6.0.1 MMB29M N915FYXXS1DQH2 release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/tblte/tblte:6.0.1/MMB29M/N915FXXS1DQH2:user/release-keys");
+        property_override("ro.build.description", "tblte-user 6.0.1 MMB29M N915FXXS1DQH2 release-keys");
         property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N915F");
         property_override_dual("ro.product.device", "ro.vendor.product.device", "tblte");
         property_override_dual("ro.product.name", "ro.vendor.product.name", "tblte");
