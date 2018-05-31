@@ -76,7 +76,7 @@ void init_target_properties()
         property_override("ro.build.description", "tbltebtu-user 6.0.1 MMB29M N915FYXXS1DQH2 release-keys");
         property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N915FY");
         property_override_dual("ro.product.device", "ro.vendor.product.device", "tblte");
-        property_override_dual("ro.product.name", "ro.vendor.product.name", "tbltexx");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "tbltebtu");
         gsm_properties();
     } else if (bootloader.find("N915G") == 0) {
         /* tbltedt */
